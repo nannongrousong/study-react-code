@@ -17,7 +17,11 @@ let webpackConfig = {
     },
     resolve: {
         alias: {
-
+            'react': path.resolve(__dirname, './src/react/packages/react'),
+            'react-dom': path.resolve(__dirname, './src/react/packages/react-dom'),
+            'shared': path.resolve(__dirname, './src/react/packages/shared'),
+            'react-reconciler': path.resolve(__dirname, './src/react/packages/react-reconciler'),
+            'react-events': path.resolve(__dirname, './src/react/packages/events'),
         }
     },
     module: {
@@ -26,7 +30,12 @@ let webpackConfig = {
             loader: 'babel-loader',
             exclude: /node_modules/,
             options: {
-                cacheDirectory: false
+                "presets": [
+                    "@babel/preset-react"
+                ],
+                "plugins": [
+                    "@babel/plugin-transform-flow-strip-types"
+                ]
             }
         }]
     },
@@ -39,6 +48,11 @@ let webpackConfig = {
             chunks: ['index', 'manifest'],
             chunksSortMode: 'none',
             favicon: path.resolve(__dirname, 'src/favicon.ico')
+        }),
+        new webpack.DefinePlugin({
+            __DEV__: true,
+            __PROFILE__: true,
+            __UMD__: true
         })
     ]
 }

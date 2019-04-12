@@ -8,7 +8,7 @@
 import {
   registrationNameModules,
   possibleRegistrationNames,
-} from 'events/EventPluginRegistry';
+} from 'react-events/EventPluginRegistry';
 import warning from 'shared/warning';
 
 import {

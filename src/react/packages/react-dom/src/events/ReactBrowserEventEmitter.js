@@ -7,7 +7,7 @@
  * @flow
  */
 
-import {registrationNameDependencies} from 'events/EventPluginRegistry';
+import {registrationNameDependencies} from 'react-events/EventPluginRegistry';
 import {
   TOP_BLUR,
   TOP_CANCEL,

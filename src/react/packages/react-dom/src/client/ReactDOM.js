@@ -38,21 +38,21 @@ import {
 } from 'react-reconciler/inline.dom';
 import {createPortal as createPortalImpl} from 'shared/ReactPortal';
 import {canUseDOM} from 'shared/ExecutionEnvironment';
-import {setBatchingImplementation} from 'events/ReactGenericBatching';
+import {setBatchingImplementation} from 'react-events/ReactGenericBatching';
 import {
   setRestoreImplementation,
   enqueueStateRestore,
   restoreStateIfNeeded,
-} from 'events/ReactControlledComponent';
+} from 'react-events/ReactControlledComponent';
 import {
   injection as EventPluginHubInjection,
   runEventsInBatch,
-} from 'events/EventPluginHub';
-import {eventNameDispatchConfigs} from 'events/EventPluginRegistry';
+} from 'react-events/EventPluginHub';
+import {eventNameDispatchConfigs} from 'react-events/EventPluginRegistry';
 import {
   accumulateTwoPhaseDispatches,
   accumulateDirectDispatches,
-} from 'events/EventPropagators';
+} from 'react-events/EventPropagators';
 import {has as hasInstance} from 'shared/ReactInstanceMap';
 import ReactVersion from 'shared/ReactVersion';
 import ReactSharedInternals from 'shared/ReactSharedInternals';
