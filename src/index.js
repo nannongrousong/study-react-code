@@ -1,14 +1,27 @@
 import React, { Component, Suspense } from 'react';
 import ReactDOM from 'react-dom';
 
-class Comp extends Component {
-    render() {
-        return <div>1234</div>;
+const classComp = React.createElement(
+    class extends Component {
+        render() {
+            return 'this is a class component';
+        }
+    }, {
+        className: 'classComp', key: 'classComp'
     }
-}
+);
 
-const comp = React.createElement(Comp, { className: 'comp', fontSize: 18, key: 'comp' });
+const funcComp = React.createElement(() => {
+    return 'this is a function component';
+}, {
+        className: 'funcComp', key: 'funcComp'
+    }
+);
 
-ReactDOM.render(comp, document.getElementById('app'));
+const divComp = React.createElement('div', {
+    className: 'divComp', key: 'divComp'
+}, 'this is a div component')
+
+ReactDOM.render(classComp, document.getElementById('app'));
 
 module.hot && module.hot.accept();
