@@ -1,0 +1,24 @@
+{
+    "compilerOptions": {
+        "experimentalDecorators": true,
+        "module": "commonjs",
+        "baseUrl": ".",
+        "paths": {
+            "shared/*": [
+                "./src/react/packages/shared/*"
+            ],
+            "react/*": [
+                "./src/react/packages/react/*"
+            ],
+            "react-dom/*": [
+                "./src/react/packages/react-dom/*"
+            ],
+            "react-reconciler/*": [
+                "./src/react/packages/react-reconciler/*"
+            ],
+            "react-events/*": [
+                "./src/react/packages/events/*"
+            ]
+        }
+    }
+}
