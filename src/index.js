@@ -4,7 +4,22 @@ import ReactDOM from 'react-dom';
 const classComp = React.createElement(
     class extends Component {
         render() {
-            return 'this is a class component';
+            return React.createElement('div', {
+                className: 'level1',
+                key: 'level1'
+            }, [
+                    React.createElement('button', { key: 'level2-btn', className: 'level2-btn' }, 'BUTTON'),
+                    React.createElement('div', { key: 'level2-div1', className: 'level2-div1' },
+                        React.createElement('div', { key: 'level3-div', className: 'level3-div' }, [
+                            React.createElement('p', { key: 'level4-p1', className: 'level4-p1' }, 'level4-p1'),
+                            React.createElement('p', { key: 'level4-p2', className: 'level4-p2' }, 'level4-p2'),
+                        ])
+                    ),
+                    React.createElement('div', { key: 'level2-div2', className: 'level2-div2' },
+                        React.createElement('p', { key: 'level3-p', className: 'level3-p' }, 'level3-p'),
+                    ),
+                ]
+            );
         }
     }, {
         className: 'classComp', key: 'classComp'
