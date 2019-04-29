@@ -34,7 +34,8 @@ let webpackConfig = {
                     "@babel/preset-react"
                 ],
                 "plugins": [
-                    "@babel/plugin-transform-flow-strip-types"
+                    "@babel/plugin-transform-flow-strip-types",
+                    "@babel/plugin-proposal-class-properties",
                 ]
             }
         }]
